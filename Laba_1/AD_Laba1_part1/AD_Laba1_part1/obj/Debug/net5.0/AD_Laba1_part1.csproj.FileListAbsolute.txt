@@ -1,0 +1,16 @@
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\bin\Debug\net5.0\AD_Laba1_part1.exe
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\bin\Debug\net5.0\AD_Laba1_part1.deps.json
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\bin\Debug\net5.0\AD_Laba1_part1.runtimeconfig.json
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\bin\Debug\net5.0\AD_Laba1_part1.runtimeconfig.dev.json
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\bin\Debug\net5.0\AD_Laba1_part1.dll
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\bin\Debug\net5.0\ref\AD_Laba1_part1.dll
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\bin\Debug\net5.0\AD_Laba1_part1.pdb
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\obj\Debug\net5.0\AD_Laba1_part1.csproj.AssemblyReference.cache
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\obj\Debug\net5.0\AD_Laba1_part1.GeneratedMSBuildEditorConfig.editorconfig
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\obj\Debug\net5.0\AD_Laba1_part1.AssemblyInfoInputs.cache
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\obj\Debug\net5.0\AD_Laba1_part1.AssemblyInfo.cs
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\obj\Debug\net5.0\AD_Laba1_part1.csproj.CoreCompileInputs.cache
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\obj\Debug\net5.0\AD_Laba1_part1.dll
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\obj\Debug\net5.0\ref\AD_Laba1_part1.dll
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\obj\Debug\net5.0\AD_Laba1_part1.pdb
+D:\University\University\AD\Labs\Laba_1\AD_Laba1_part1\AD_Laba1_part1\obj\Debug\net5.0\AD_Laba1_part1.genruntimeconfig.cache
