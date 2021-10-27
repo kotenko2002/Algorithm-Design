@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 
 namespace AD_Laba1_part1
 {
@@ -21,14 +21,21 @@ namespace AD_Laba1_part1
 
             int iterations = 0;
             BFS bfs = new BFS();
+            Stopwatch stopwatch = new Stopwatch();
+
+            stopwatch.Start();
             while (board.СonflictsCount() != 0)
                 board = bfs.Search(board, ref visited, ref iterations, ref queue);
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+            string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
 
             board.Draw();
-            Console.WriteLine($"Количество рассмотенных состояний: {visited.Count}");
-            Console.WriteLine($"Количество инераций в BFS: {iterations}");
-            Console.WriteLine($"Длина очереди, где записаны развёрнутые потомки: {queue.Count}\n");
-            
+            Console.WriteLine($"Количество инераций : {iterations}");
+            Console.WriteLine($"Количество состояний: {visited.Count}");
+            Console.WriteLine($"Длина очереди: {queue.Count}");
+            Console.WriteLine(elapsedTime, "RunTime");
+
         }
     }
 }

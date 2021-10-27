@@ -1,0 +1,13 @@
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\bin\Debug\netcoreapp3.1\ACA_TCP_AD.exe
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\bin\Debug\netcoreapp3.1\ACA_TCP_AD.deps.json
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\bin\Debug\netcoreapp3.1\ACA_TCP_AD.runtimeconfig.json
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\bin\Debug\netcoreapp3.1\ACA_TCP_AD.runtimeconfig.dev.json
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\bin\Debug\netcoreapp3.1\ACA_TCP_AD.dll
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\bin\Debug\netcoreapp3.1\ACA_TCP_AD.pdb
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\obj\Debug\netcoreapp3.1\ACA_TCP_AD.csproj.AssemblyReference.cache
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\obj\Debug\netcoreapp3.1\ACA_TCP_AD.AssemblyInfoInputs.cache
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\obj\Debug\netcoreapp3.1\ACA_TCP_AD.AssemblyInfo.cs
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\obj\Debug\netcoreapp3.1\ACA_TCP_AD.csproj.CoreCompileInputs.cache
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\obj\Debug\netcoreapp3.1\ACA_TCP_AD.dll
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\obj\Debug\netcoreapp3.1\ACA_TCP_AD.pdb
+D:\University\University\AD\Labs\ACA_TCP_AD\ACA_TCP_AD\obj\Debug\netcoreapp3.1\ACA_TCP_AD.genruntimeconfig.cache

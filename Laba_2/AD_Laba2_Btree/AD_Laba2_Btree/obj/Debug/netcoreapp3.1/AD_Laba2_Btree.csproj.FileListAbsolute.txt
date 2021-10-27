@@ -1,0 +1,13 @@
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\bin\Debug\netcoreapp3.1\AD_Laba2_Btree.exe
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\bin\Debug\netcoreapp3.1\AD_Laba2_Btree.deps.json
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\bin\Debug\netcoreapp3.1\AD_Laba2_Btree.runtimeconfig.json
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\bin\Debug\netcoreapp3.1\AD_Laba2_Btree.runtimeconfig.dev.json
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\bin\Debug\netcoreapp3.1\AD_Laba2_Btree.dll
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\bin\Debug\netcoreapp3.1\AD_Laba2_Btree.pdb
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\obj\Debug\netcoreapp3.1\AD_Laba2_Btree.csproj.AssemblyReference.cache
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\obj\Debug\netcoreapp3.1\AD_Laba2_Btree.AssemblyInfoInputs.cache
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\obj\Debug\netcoreapp3.1\AD_Laba2_Btree.AssemblyInfo.cs
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\obj\Debug\netcoreapp3.1\AD_Laba2_Btree.csproj.CoreCompileInputs.cache
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\obj\Debug\netcoreapp3.1\AD_Laba2_Btree.dll
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\obj\Debug\netcoreapp3.1\AD_Laba2_Btree.pdb
+D:\University\University\AD\Labs\Laba_2\AD_Laba2_Btree\AD_Laba2_Btree\obj\Debug\netcoreapp3.1\AD_Laba2_Btree.genruntimeconfig.cache

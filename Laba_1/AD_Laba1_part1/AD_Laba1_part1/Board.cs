@@ -19,7 +19,6 @@ namespace AD_Laba1_part1
         {
             for (int i = 0; i < Size; i++)
             {
-                Console.Write("\t");
                 for (int j = 0; j < Size; j++)
                 {
                     
