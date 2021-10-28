@@ -15,6 +15,7 @@ namespace ACA_TCP_AD
         public int Height { get; set; }
         public int Width { get; set; }
         public int CountOfCities { get; set; }
+        public double Lmin { get; set; }
         public Table(int height, int width, int vertex)
         {
             Height = height;
@@ -58,6 +59,9 @@ namespace ACA_TCP_AD
                     else
                         PheromonesMap[i, j] = 0.2;
                 }
+
+            Lmin = Iteration().OrderBy(x => x.Result).First().Result;
+            Console.WriteLine($"Lmin = {Lmin} ");
         }
         public void PrintMap()
         {
@@ -105,7 +109,7 @@ namespace ACA_TCP_AD
                     if(PheromonesMap[i, j] == 0)
                         Console.Write(" " + PheromonesMap[i, j] + "  ");
                     else
-                        Console.Write(PheromonesMap[i, j] + " ");
+                        Console.Write(Math.Round(PheromonesMap[i, j],2) + " ");
                 }
                 Console.WriteLine();
             }
@@ -116,15 +120,14 @@ namespace ACA_TCP_AD
             {
                 List<Cell> list = Map.Cast<Cell>().ToList();
                 var result = list.Find(x => x != null && x.CityNumber == number).Coordinates;
-                //Console.WriteLine($"координаты города №{number}: [{result.X},{result.Y}]");
                 return result;
             }
             else
                 throw new Exception("Map не инициализирован в методе FindCity()");
         }
-        public void GetBestWay()
+        public Ant[] Iteration()
         {
-            Ant[] ants = new Ant[5];
+            Ant[] ants = new Ant[Constants.M];
             int[] citys = new int[CountOfCities];
             for (int i = 0; i < citys.Length; i++)
                 citys[i] = i;
@@ -133,20 +136,58 @@ namespace ACA_TCP_AD
                 if (j == citys.Length)
                     j = 0;
                 ants[i] = new Ant(i);
-                ants[i].TabooList = new List<Taboo>();  
-                FindSolution(ants[i], citys[j]);         
-                Console.WriteLine();
-                for (int k = 0; k < ants[i].TabooList.Count; k++)
-                    Console.Write(ants[i].TabooList[k].CityNumber + "-> ");
-                Console.WriteLine(i + "-ый муравей закончил пробежку");
+                ants[i].TabooList = new List<Taboo>();
+                FindSolution(ants[i], citys[j]);
+                //мб ошибка снизу
+                ants[i].Result += GetDistanceBetweenCities(FindCityCoordinates(ants[i].TabooList[ants[i].TabooList.Count - 1].CityNumber), FindCityCoordinates(citys[j]));
+                ants[i].TabooList.Add(new Taboo(citys[j]));
             }
+            return ants;
+        }
+        public void GetBestWay()
+        {
+            Ant[] generation = Iteration();
+            //обновляем список феромонов
+            for (int i = 0; i < CountOfCities; i++)
+                for (int j = 0; j < CountOfCities; j++)
+                {
+                    if (i == j)
+                        continue;
+                    else
+                        PheromonesMap[i, j] = (1 - Constants.P) * PheromonesMap[i, j];
+                }
+            for (int i = 0; i < generation.Length; i++)
+            {
+                generation[i].Sequence = new List<(int, int)>();
+                for (int j = 0; j < generation[i].TabooList.Count - 1; j++)
+                    generation[i].Sequence.Add(((generation[i].TabooList[j].CityNumber, generation[i].TabooList[j + 1].CityNumber)));
+            }
+            //for (int i = 0; i < generation[0].Sequence.Count; i++)
+            //    Console.Write($"[{generation[0].Sequence[i].Item1} {generation[0].Sequence[i].Item2}] ");
+
+            for (int i = 0; i < PheromonesMap.GetLength(0); i++)
+                for (int j = 0; j < PheromonesMap.GetLength(0); j++)
+                {
+                    if (i != j)
+                    {
+                        for (int k = 0; k < generation.Length; k++)
+                        {
+                            var result = generation[k].Sequence.Find(pair => pair.Item1 == i && pair.Item2 == j);
+                            if (result != (0, 0))
+                                PheromonesMap[i, j] += Lmin / generation[k].Result;
+                        }
+                    }
+                }
+
+            //   var result = list.Find(x => x != null && x.CityNumber == number).Coordinates;
+            //   Lmin = Iteration().OrderBy(x => x.Result).First().Result;
+            //PheromonesMap[i, j] = (1 - Constants.P) * PheromonesMap[i, j] + (Lmin / generation[i].Result);
+            Console.WriteLine("Лучший маршрут:" + generation.OrderBy(x => x.Result).First().Result + " км");
         }
         public void FindSolution(Ant ant, int startCity)
         {
-            //Console.Write("я в городе " + startCity + " ");
             Random random = new Random();
             ant.TabooList.Add(new Taboo(startCity));
-
             List<double> Pij = new List<double>();
 
             double sum = 0, totalSum = 0;
@@ -155,7 +196,7 @@ namespace ACA_TCP_AD
                 if (ant.TabooList.SingleOrDefault(s => s.CityNumber == j) != null)
                     continue;
 
-                Pij.Add(Math.Pow(PheromonesMap[startCity, j], 1) * Math.Pow((1 / DistanceMap[startCity, j]), 1));//заменить на альфа и бета
+                Pij.Add(Math.Pow(PheromonesMap[startCity, j], Constants.alpha) * Math.Pow((1 / DistanceMap[startCity, j]), Constants.beta));//заменить на альфа и бета
                 sum += Pij[Pij.Count - 1];
             }
             for (int j = 0; j < CountOfCities - ant.TabooList.Count; j++)
@@ -170,18 +211,13 @@ namespace ACA_TCP_AD
             bordersList.Add(0);
             foreach (var item in Pij)
                 bordersList.Add(item);
-            //Console.Write("[");
-            //foreach (var item in bordersList)
-            //    Console.Write(item + " ");
-            //Console.Write("]");
             double randomChoose = random.NextDouble();
-            //Console.WriteLine("\nRandom number: " + randomChoose);
 
             string[] feature = new string[CountOfCities];
-            for (int i = 0; i < ant.TabooList.Count; i++)// пока хз зачем...
+            for (int i = 0; i < ant.TabooList.Count; i++)
                 feature[ant.TabooList[i].CityNumber] = ant.TabooList[i].CityNumber.ToString();
 
-            int numberOfCityToGo = 999;//убрать присвоение значения
+            int numberOfCityToGo = 999;
             for (int i = 0; i < CountOfCities - ant.TabooList.Count; i++)
             {
                 if (randomChoose >= bordersList[i] && randomChoose <= bordersList[i + 1])
@@ -201,9 +237,16 @@ namespace ACA_TCP_AD
                         break;
                     }          
             }
-            //Console.WriteLine("Пиздуем в горд " + numberOfCityToGo + " ");
+            if(numberOfCityToGo != 999)
+                ant.Result += GetDistanceBetweenCities(FindCityCoordinates(startCity), FindCityCoordinates(numberOfCityToGo));
             if (ant.TabooList.Count != CountOfCities)
                 FindSolution(ant, numberOfCityToGo);
+        }
+        public double GetDistanceBetweenCities(Point start, Point end)
+        {
+            Point vector = new Point(end.X - start.X, end.Y - start.Y);
+            double result = Math.Sqrt(Math.Pow(vector.X, 2) + Math.Pow(vector.Y, 2));
+            return result;
         }
     }
 }
