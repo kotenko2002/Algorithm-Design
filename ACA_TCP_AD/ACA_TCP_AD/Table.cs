@@ -128,27 +128,22 @@ namespace ACA_TCP_AD
             int[] citys = new int[CountOfCities];
             for (int i = 0; i < citys.Length; i++)
                 citys[i] = i;
-            if (ants.Length > citys.Length)
-                throw new Exception("Пора решить проблему... ");
             for (int i = 0, j = 0; i < ants.Length; i++, j++)
             {
                 if (j == citys.Length)
                     j = 0;
-                //t - количество ферамона между i-ым и j-ым городом
-                //n - 1 делёное на расстояние между i-ым и j-ым городом 
                 ants[i] = new Ant(i);
-                ants[i].TabooList = new List<Taboo>();
-                //FindSolution(ants[i], citys[i]);
-                FindSolutionNew(ants[i], citys[j]);
+                ants[i].TabooList = new List<Taboo>();  
+                FindSolution(ants[i], citys[j]);         
                 Console.WriteLine();
                 for (int k = 0; k < ants[i].TabooList.Count; k++)
                     Console.Write(ants[i].TabooList[k].CityNumber + "-> ");
                 Console.WriteLine(i + "-ый муравей закончил пробежку");
             }
         }
-        public void FindSolutionNew(Ant ant, int startCity)
+        public void FindSolution(Ant ant, int startCity)
         {
-            //Console.WriteLine("я в городе " + startCity);
+            //Console.Write("я в городе " + startCity + " ");
             Random random = new Random();
             ant.TabooList.Add(new Taboo(startCity));
 
@@ -171,8 +166,6 @@ namespace ACA_TCP_AD
                     Pij[j] += Pij[j - 1];
             }
 
-            //Console.WriteLine("Sum = " + totalSum);
-
             List<double> bordersList = new List<double>();
             bordersList.Add(0);
             foreach (var item in Pij)
@@ -189,28 +182,16 @@ namespace ACA_TCP_AD
                 feature[ant.TabooList[i].CityNumber] = ant.TabooList[i].CityNumber.ToString();
 
             int numberOfCityToGo = 999;//убрать присвоение значения
-            for (int i = 0; i < bordersList.Count - ant.TabooList.Count/2 + 1; i++)
+            for (int i = 0; i < CountOfCities - ant.TabooList.Count; i++)
             {
                 if (randomChoose >= bordersList[i] && randomChoose <= bordersList[i + 1])
                 {
-                    //numberOfCityToGo = i;
                     for (int k = 0; k < feature.Length; k++)
                         if (feature[k] == null)
                         {
                             numberOfCityToGo = k;
                             break;
                         }
-                            
-                    //foreach (var item in ant.TabooList)
-                    //    if (item.CityNumber <= i)
-                    //        numberOfCityToGo++;
-                    //for (int k = 0; k < feature.Length; k++)
-                    //{
-                    //    if(feature[k] = "Answer")
-                    //}
-                    //Console.WriteLine($"{randomChoose} лежит между [{bordersList[i]};{bordersList[i + 1]}]");
-                    //Console.WriteLine("следуйщий город " + numberOfCityToGo);
-                    
                     break;
                 }
                 for (int k = 0; k < feature.Length; k++)
@@ -218,11 +199,11 @@ namespace ACA_TCP_AD
                     {
                         feature[k] = k.ToString();
                         break;
-                    }
-                        
+                    }          
             }
+            //Console.WriteLine("Пиздуем в горд " + numberOfCityToGo + " ");
             if (ant.TabooList.Count != CountOfCities)
-                FindSolutionNew(ant, numberOfCityToGo);
+                FindSolution(ant, numberOfCityToGo);
         }
     }
 }
