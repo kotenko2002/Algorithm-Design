@@ -63,3 +63,48 @@ namespace BTreeDb
         }
     }
 }
+//BTree tree = new BTree(25);
+//Random random = new Random();
+//string name = "someone";
+//for (int i = 0; i < 10000; i++)
+//{
+//    int num = random.Next(0, 9);
+//    switch (num)
+//    {
+//        case 0:
+//            name = "Leo";
+//            break;
+//        case 1:
+//            name = "Henry";
+//            break;
+//        case 2:
+//            name = "Lucas";
+//            break;
+//        case 3:
+//            name = "Jackson";
+//            break;
+//        case 4:
+//            name = "Matthew";
+//            break;
+//        case 5:
+//            name = "Owen";
+//            break;
+//        case 6:
+//            name = "Ezra";
+//            break;
+//        case 7:
+//            name = "Luca";
+//            break;
+//        case 8:
+//            name = "Myles";
+//            break;
+//        case 9:
+//            name = "Zion";
+//            break;
+//        default:
+//            Console.WriteLine("Error4ik");
+//            break;
+//    }
+//    tree.Insert(i, name);
+//    Console.WriteLine(i);
+//}
