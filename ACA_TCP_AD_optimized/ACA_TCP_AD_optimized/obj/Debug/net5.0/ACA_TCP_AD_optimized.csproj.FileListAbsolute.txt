@@ -1,0 +1,16 @@
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\obj\Debug\net5.0\ACA_TCP_AD_optimized.csproj.AssemblyReference.cache
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\obj\Debug\net5.0\ACA_TCP_AD_optimized.GeneratedMSBuildEditorConfig.editorconfig
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\obj\Debug\net5.0\ACA_TCP_AD_optimized.AssemblyInfoInputs.cache
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\obj\Debug\net5.0\ACA_TCP_AD_optimized.AssemblyInfo.cs
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\obj\Debug\net5.0\ACA_TCP_AD_optimized.csproj.CoreCompileInputs.cache
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\bin\Debug\net5.0\ACA_TCP_AD_optimized.exe
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\bin\Debug\net5.0\ACA_TCP_AD_optimized.deps.json
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\bin\Debug\net5.0\ACA_TCP_AD_optimized.runtimeconfig.json
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\bin\Debug\net5.0\ACA_TCP_AD_optimized.runtimeconfig.dev.json
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\bin\Debug\net5.0\ACA_TCP_AD_optimized.dll
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\bin\Debug\net5.0\ref\ACA_TCP_AD_optimized.dll
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\bin\Debug\net5.0\ACA_TCP_AD_optimized.pdb
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\obj\Debug\net5.0\ACA_TCP_AD_optimized.dll
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\obj\Debug\net5.0\ref\ACA_TCP_AD_optimized.dll
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\obj\Debug\net5.0\ACA_TCP_AD_optimized.pdb
+D:\University\University\AD\Labs\ACA_TCP_AD_optimized\ACA_TCP_AD_optimized\obj\Debug\net5.0\ACA_TCP_AD_optimized.genruntimeconfig.cache

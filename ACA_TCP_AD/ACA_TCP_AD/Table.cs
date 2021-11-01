@@ -11,15 +11,15 @@ namespace ACA_TCP_AD
         public Cell[,] Map { get; set; }
         public double[,] DistanceMap { get; set; }
         public double[,] PheromonesMap { get; set; }
-        
-        public int Height { get; set; }
-        public int Width { get; set; }
+        public List<(int, int)> BestSequence { get; set; }
+        //public int Height { get; set; }
+        //public int Width { get; set; }
         public int CountOfCities { get; set; }
         public double Lmin { get; set; }
         public Table(int height, int width, int vertex)
         {
-            Height = height;
-            Width = width;
+            //Height = height;
+            //Width = width;
             CountOfCities = vertex;
             Map = new Cell[height, width];
 
@@ -61,7 +61,7 @@ namespace ACA_TCP_AD
                 }
 
             Lmin = Iteration().OrderBy(x => x.Result).First().Result;
-            Console.WriteLine($"Lmin = {Lmin} ");
+            //Console.WriteLine($"Lmin = {Lmin} ");
         }
         public void PrintMap()
         {
@@ -95,7 +95,10 @@ namespace ACA_TCP_AD
             {
                 for (int j = 0; j < DistanceMap.GetLength(0); j++)
                 {
-                    Console.Write(DistanceMap[i,j] + " ");
+                    if(Math.Round(DistanceMap[i, j], 0).ToString().Length == 1)
+                        Console.Write(Math.Round(DistanceMap[i, j], 0) + "  ");
+                    else
+                        Console.Write(Math.Round(DistanceMap[i, j], 0) + " ");
                 }
                 Console.WriteLine();
             }
@@ -178,11 +181,10 @@ namespace ACA_TCP_AD
                         }
                     }
                 }
+            //Console.WriteLine("Лучший маршрут:" + generation.OrderBy(x => x.Result).First().Result + " км");
+            Lmin = generation.OrderBy(x => x.Result).First().Result;
 
-            //   var result = list.Find(x => x != null && x.CityNumber == number).Coordinates;
-            //   Lmin = Iteration().OrderBy(x => x.Result).First().Result;
-            //PheromonesMap[i, j] = (1 - Constants.P) * PheromonesMap[i, j] + (Lmin / generation[i].Result);
-            Console.WriteLine("Лучший маршрут:" + generation.OrderBy(x => x.Result).First().Result + " км");
+            BestSequence = generation.OrderBy(x => x.Result).First().Sequence;
         }
         public void FindSolution(Ant ant, int startCity)
         {

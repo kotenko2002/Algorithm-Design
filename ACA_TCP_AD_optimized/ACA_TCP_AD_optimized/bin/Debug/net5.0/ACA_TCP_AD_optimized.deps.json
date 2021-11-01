@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ACA_TCP_AD_optimized/1.0.0": {
+        "runtime": {
+          "ACA_TCP_AD_optimized.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ACA_TCP_AD_optimized/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

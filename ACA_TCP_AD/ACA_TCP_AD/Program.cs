@@ -7,26 +7,36 @@ namespace ACA_TCP_AD
     {
         static void Main(string[] args)
         {
-            Table table = new Table(50, 50, 200);//создание города и задание начальных данных занимет +-26сек при 200 вершинах;
-            //table.PrintPheromonesMap();
-            //Console.WriteLine("Start");
-            //table.PrintPheromonesMap();
+            Table table = new Table(50, 60, 30);
             for (int i = 0; i < 30; i++)
             {
                 table.GetBestWay();
-                //table.PrintPheromonesMap();
-                //Console.WriteLine();
+                Console.WriteLine(i + "-aя итерация " + table.Lmin);
             }
-            
-            //Stopwatch stopwatch = new Stopwatch();
-            //stopwatch.Start();
+        }
+        static void City40()
+        {
+            Table table = new Table(30, 55, 40);
+            table.PrintMap();
+            table.PrintDistanceMap();
+            table.PrintPheromonesMap();
 
-            //table.GetBestWay();
+            for (int i = 0; i < 30; i++)
+            {
+                table.GetBestWay();
+                table.PrintPheromonesMap();
+                Console.WriteLine(i + "-aя итерация " + table.Lmin);
 
-            //stopwatch.Stop();
-            //TimeSpan ts = stopwatch.Elapsed;
-            //string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-            //Console.WriteLine(elapsedTime, "RunTime");
+            }
+
+            Console.Write("Лучший путь: ");
+            Console.Write("[ ");
+            foreach (var item in table.BestSequence)
+            {
+                Console.Write($"({item.Item1}->{item.Item2}) ");
+            }
+            Console.WriteLine("] ");
+            Console.WriteLine("Длинна лучшего пути: " + Math.Round(table.Lmin, 0));
         }
     }
 }
