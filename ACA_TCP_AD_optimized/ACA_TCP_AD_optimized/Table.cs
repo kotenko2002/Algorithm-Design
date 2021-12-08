@@ -11,6 +11,7 @@ namespace ACA_TCP_AD_optimized
 
         public int CountOfCities { get; set; }
         public double Lmin { get; set; }
+        public double BestPath { get; set; }
 
         public Table(int vertex)
         {
@@ -22,15 +23,14 @@ namespace ACA_TCP_AD_optimized
             for (int i = 0; i < CountOfCities; i++)
                 for (int j = 0; j < CountOfCities; j++)
                     if (i != j && DistanceMap[i, j] == 0 && DistanceMap[j, i] == 0)
-                        DistanceMap[i, j] = DistanceMap[j, i] = random.Next(1, 50);
-            //Print.PrintDistanceMap(this);
+                        DistanceMap[i, j] = DistanceMap[j, i] = random.Next(5, 150);
 
             PheromonesMap = new double[CountOfCities, CountOfCities];
             for (int i = 0; i < CountOfCities; i++)
                 for (int j = 0; j < CountOfCities; j++)
                     if (i != j)
                         PheromonesMap[i, j] = 0.2;
-            //Print.PrintPheromonesMap(this);
+            Lmin = 999999999;
         }
         public List<(int, int)> Iteration()
         {
@@ -46,10 +46,12 @@ namespace ACA_TCP_AD_optimized
                 ants[i].Sequence = new List<(int, int)>();
                 WalkThroughCities(ants[i], citys[j]);
             }
-            
-            Lmin = ants.Min(x => x.Result);//Lmin мб не так
-            List<(int, int)> bestWay = ants.FirstOrDefault(x => x.Result == Lmin).Sequence;
 
+            BestPath = ants.Min(x => x.Result);
+            if (BestPath < Lmin)
+                Lmin = BestPath;
+            List<(int, int)> bestWay = ants.FirstOrDefault(x => x.Result == BestPath).Sequence;
+            
             for (int i = 0; i < CountOfCities; i++)
                 for (int j = 0; j < CountOfCities; j++)
                 {
