@@ -10,9 +10,37 @@ namespace Teeko__alpha_beta_pruning
         {
             (-1, -1), (-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1)
         };
-        public static void MiniMax(char[,] array, int depth, char symbol)
+        public static (char[,], long) MiniMax(char[,] array, int depth, bool miximizigPlayerTurnToMove)
         {
-            //TO DO: realize minimax...
+            if (depth == 0 || WinnerFinder.CheckWinner(array, 'C'))
+                return (array, EvaluationClass.F(array));
+
+            if (miximizigPlayerTurnToMove)
+            {
+                (char[,], long) maxEval = (null, -999999999999999999);
+                List<char[,]> children = GetAllChildren(array, 'C');// дети ПК
+                foreach (var child in children)
+                {
+                    (char[,], long) eval = MiniMax(child, depth - 1, false);
+                    char[,] buffArray = new char[5, 5];
+                    Array.Copy(child, 0, buffArray, 0, array.Length);
+                    maxEval = (maxEval.Item2 < eval.Item2) ? (buffArray, eval.Item2) : maxEval;
+                }
+                return maxEval;
+            }
+            else
+            {
+                (char[,], long) minEval = (null, 999999999999999999);
+                List<char[,]> children = GetAllChildren(array, 'P');// дети Игрока, вот так и становятся отцами...
+                foreach (var child in children)
+                {
+                    (char[,], long) eval = MiniMax(child, depth - 1, true);
+                    char[,] buffArray = new char[5, 5];
+                    Array.Copy(child, 0, buffArray, 0, array.Length);
+                    minEval = (minEval.Item2 > eval.Item2) ? (buffArray, eval.Item2) : minEval;
+                }
+                return minEval;
+            }
         }
         public static List<char[,]> GetAllChildren(char[,] array, char symbol)
         {

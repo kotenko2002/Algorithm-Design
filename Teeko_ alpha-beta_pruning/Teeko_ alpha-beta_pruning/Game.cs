@@ -177,6 +177,20 @@ namespace Teeko__alpha_beta_pruning
         }
         public void ComputerTurnToMove()
         {
+            map = AI.MiniMax(map, 4, true).Item1;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    if (map[i, j] == 'C')
+                        buttons[i, j].Image = blackFigure;
+                    else if (map[i, j] == 'P')
+                        buttons[i, j].Image = whiteFigure;
+                    else
+                        buttons[i, j].Image = null;
+                }
+            }
+            Update();
             //TO DO: minimax
             //Thread.Sleep(5000);
         }
