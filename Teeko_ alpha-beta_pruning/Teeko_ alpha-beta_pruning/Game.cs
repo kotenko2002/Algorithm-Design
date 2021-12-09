@@ -100,6 +100,7 @@ namespace Teeko__alpha_beta_pruning
             win.Visible = false;
             Controls.Add(win);
         }
+
         public void PlayerTurnToPut(object sender, EventArgs e)
         {
             Button pressedButton = sender as Button;
