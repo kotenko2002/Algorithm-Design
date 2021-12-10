@@ -10,10 +10,10 @@ namespace Teeko__alpha_beta_pruning
         {
             (-1, -1), (-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1)
         };
-        public static (char[,], long) MiniMax(char[,] array, int depth, bool miximizigPlayerTurnToMove)
+        public static (char[,], long) MiniMaxMove(char[,] array, int depth, long alpha, long beta, bool miximizigPlayerTurnToMove)
         {
             if (depth == 0 || WinnerFinder.CheckWinner(array, 'C'))
-                return (array, EvaluationClass.F(array));
+                return (array, EvaluationClass.FMove(array));
 
             if (miximizigPlayerTurnToMove)
             {
@@ -21,10 +21,14 @@ namespace Teeko__alpha_beta_pruning
                 List<char[,]> children = GetAllChildren(array, 'C');// дети ПК
                 foreach (var child in children)
                 {
-                    (char[,], long) eval = MiniMax(child, depth - 1, false);
+                    (char[,], long) eval = MiniMaxMove(child, depth - 1, alpha, beta, false);
                     char[,] buffArray = new char[5, 5];
                     Array.Copy(child, 0, buffArray, 0, array.Length);
                     maxEval = (maxEval.Item2 < eval.Item2) ? (buffArray, eval.Item2) : maxEval;
+
+                    alpha = (alpha < eval.Item2) ? eval.Item2 : alpha;
+                    if (beta <= alpha)
+                        break;
                 }
                 return maxEval;
             }
@@ -34,10 +38,14 @@ namespace Teeko__alpha_beta_pruning
                 List<char[,]> children = GetAllChildren(array, 'P');// дети Игрока, вот так и становятся отцами...
                 foreach (var child in children)
                 {
-                    (char[,], long) eval = MiniMax(child, depth - 1, true);
+                    (char[,], long) eval = MiniMaxMove(child, depth - 1, alpha, beta, true);
                     char[,] buffArray = new char[5, 5];
                     Array.Copy(child, 0, buffArray, 0, array.Length);
                     minEval = (minEval.Item2 > eval.Item2) ? (buffArray, eval.Item2) : minEval;
+
+                    beta = (beta > eval.Item2) ? eval.Item2 : beta;
+                    if (beta <= alpha)
+                        break;
                 }
                 return minEval;
             }
@@ -60,6 +68,67 @@ namespace Teeko__alpha_beta_pruning
                         child[item.X + checker.X, item.Y + checker.Y] = symbol;
                         children.Add(child);
                     }
+                }
+            }
+            return children;
+        }
+
+        public static (char[,], long) MiniMaxPut(char[,] array, int depth, long alpha, long beta, bool miximizigPlayerTurnToMove)
+        {
+            if (depth == 0 || WinnerFinder.CheckWinner(array, 'C'))
+                return (array, EvaluationClass.FPut(array));
+
+            if (miximizigPlayerTurnToMove)
+            {
+                (char[,], long) maxEval = (null, -999999999999999999);
+                List<char[,]> children = GetAllChildrenToPut(array, 'C');// дети ПК
+                foreach (var child in children)
+                {
+                    (char[,], long) eval = MiniMaxPut(child, depth - 1, alpha, beta, false);
+                    char[,] buffArray = new char[5, 5];
+                    Array.Copy(child, 0, buffArray, 0, array.Length);
+                    maxEval = (maxEval.Item2 < eval.Item2) ? (buffArray, eval.Item2) : maxEval;
+
+                    alpha = (alpha < eval.Item2) ? eval.Item2 : alpha;
+                    if (beta <= alpha)
+                        break;
+                }
+                return maxEval;
+            }
+            else
+            {
+                (char[,], long) minEval = (null, 999999999999999999);
+                List<char[,]> children = GetAllChildrenToPut(array, 'P');// дети Игрока, вот так и становятся отцами...
+                foreach (var child in children)
+                {
+                    (char[,], long) eval = MiniMaxPut(child, depth - 1, alpha, beta, true);
+                    char[,] buffArray = new char[5, 5];
+                    Array.Copy(child, 0, buffArray, 0, array.Length);
+                    minEval = (minEval.Item2 > eval.Item2) ? (buffArray, eval.Item2) : minEval;
+
+                    beta = (beta > eval.Item2) ? eval.Item2 : beta;
+                    if (beta <= alpha)
+                        break;
+                }
+                return minEval;
+            }
+        }
+        public static List<char[,]> GetAllChildrenToPut(char[,] array, char symbol)
+        {
+            List<char[,]> children = new List<char[,]>();
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (array[i, j] == '0')
+                    {
+                        char[,] buffArray = new char[5, 5];
+                        Array.Copy(array, 0, buffArray, 0, array.Length);
+                        buffArray[i, j] = symbol;
+                        children.Add(buffArray);
+                    }
+
                 }
             }
             return children;

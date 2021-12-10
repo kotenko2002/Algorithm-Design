@@ -125,20 +125,20 @@ namespace Teeko__alpha_beta_pruning
         }
         public void ComputerTurnToPut()
         {
-            //TO DO: strategy
-            Random random = new Random();
-            bool changeComplete = false;
-            do
+            map = AI.MiniMaxPut(map, 4, -999999999999999, 999999999999999, true).Item1;
+            for (int i = 0; i < 5; i++)
             {
-                int i = random.Next(0, 5), j = random.Next(0, 5);
-                if (map[i, j] == '0')
+                for (int j = 0; j < 5; j++)
                 {
-                    map[i, j] = 'C';
-                    buttons[i, j].Image = blackFigure;
-                    changeComplete = true;
+                    if (map[i, j] == 'C')
+                        buttons[i, j].Image = blackFigure;
+                    else if (map[i, j] == 'P')
+                        buttons[i, j].Image = whiteFigure;
+                    else
+                        buttons[i, j].Image = null;
                 }
             }
-            while (!changeComplete);
+            Update();
         }
         public void PlayerTurnToMove(object sender, EventArgs e)
         {
@@ -177,7 +177,7 @@ namespace Teeko__alpha_beta_pruning
         }
         public void ComputerTurnToMove()
         {
-            map = AI.MiniMax(map, 4, true).Item1;
+            map = AI.MiniMaxMove(map, 4, -999999999999999, 999999999999999, true).Item1;
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 5; j++)
@@ -191,8 +191,6 @@ namespace Teeko__alpha_beta_pruning
                 }
             }
             Update();
-            //TO DO: minimax
-            //Thread.Sleep(5000);
         }
 
         public bool MoveLimitation((int,int) from, (int, int) to)
@@ -209,7 +207,7 @@ namespace Teeko__alpha_beta_pruning
                 for (int j = 0; j < Constants.mapSize; j++)
                     if (map[i, j] != '0')
                         checkersCounter++;
-            return (checkersCounter == 10) ? true : false;
+            return (checkersCounter == 8) ? true : false;
         }
         public Color GetPrevButtonColor()
         {
