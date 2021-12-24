@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Teeko_ alpha-beta_pruning/1.0.0": {
+        "runtime": {
+          "Teeko_ alpha-beta_pruning.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Teeko_ alpha-beta_pruning/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -133,6 +133,7 @@ namespace Teeko__alpha_beta_pruning
             }
             return children;
         }
+
         public static List<(int X, int Y)> GetAllCheckers(char[,] array, char symbol)
         {
             List<(int X, int Y)> coordinates = new List<(int X, int Y)>();

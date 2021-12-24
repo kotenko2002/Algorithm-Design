@@ -1,0 +1,15 @@
+D:\University\University\AD\Labs\DiceGame\DiceGame\bin\Debug\netcoreapp3.1\DiceGame.exe
+D:\University\University\AD\Labs\DiceGame\DiceGame\bin\Debug\netcoreapp3.1\DiceGame.deps.json
+D:\University\University\AD\Labs\DiceGame\DiceGame\bin\Debug\netcoreapp3.1\DiceGame.runtimeconfig.json
+D:\University\University\AD\Labs\DiceGame\DiceGame\bin\Debug\netcoreapp3.1\DiceGame.runtimeconfig.dev.json
+D:\University\University\AD\Labs\DiceGame\DiceGame\bin\Debug\netcoreapp3.1\DiceGame.dll
+D:\University\University\AD\Labs\DiceGame\DiceGame\bin\Debug\netcoreapp3.1\DiceGame.pdb
+D:\University\University\AD\Labs\DiceGame\DiceGame\obj\Debug\netcoreapp3.1\DiceGame.csproj.AssemblyReference.cache
+D:\University\University\AD\Labs\DiceGame\DiceGame\obj\Debug\netcoreapp3.1\DiceGame.Form1.resources
+D:\University\University\AD\Labs\DiceGame\DiceGame\obj\Debug\netcoreapp3.1\DiceGame.csproj.GenerateResource.cache
+D:\University\University\AD\Labs\DiceGame\DiceGame\obj\Debug\netcoreapp3.1\DiceGame.AssemblyInfoInputs.cache
+D:\University\University\AD\Labs\DiceGame\DiceGame\obj\Debug\netcoreapp3.1\DiceGame.AssemblyInfo.cs
+D:\University\University\AD\Labs\DiceGame\DiceGame\obj\Debug\netcoreapp3.1\DiceGame.csproj.CoreCompileInputs.cache
+D:\University\University\AD\Labs\DiceGame\DiceGame\obj\Debug\netcoreapp3.1\DiceGame.dll
+D:\University\University\AD\Labs\DiceGame\DiceGame\obj\Debug\netcoreapp3.1\DiceGame.pdb
+D:\University\University\AD\Labs\DiceGame\DiceGame\obj\Debug\netcoreapp3.1\DiceGame.genruntimeconfig.cache

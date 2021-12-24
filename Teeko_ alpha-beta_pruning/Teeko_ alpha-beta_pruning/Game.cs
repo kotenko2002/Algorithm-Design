@@ -125,7 +125,7 @@ namespace Teeko__alpha_beta_pruning
         }
         public void ComputerTurnToPut()
         {
-            map = AI.MiniMaxPut(map, 4, -999999999999999, 999999999999999, true).Item1;
+            map = AI.MiniMaxPut(map, 5, -999999999999999, 999999999999999, true).Item1;
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 5; j++)
@@ -177,7 +177,7 @@ namespace Teeko__alpha_beta_pruning
         }
         public void ComputerTurnToMove()
         {
-            map = AI.MiniMaxMove(map, 4, -999999999999999, 999999999999999, true).Item1;
+            map = AI.MiniMaxMove(map, 5, -999999999999999, 999999999999999, true).Item1;
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 5; j++)

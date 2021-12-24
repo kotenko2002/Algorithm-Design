@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "JwCaMTUNlpQXH4ZTDHTH+bckTXtQ5zLWuGp+HvtGpOHQKjDBywAsQeKd0BJP6KquXtwBGkjO4hy448VrFY+RQg==",
+  "success": true,
+  "projectFilePath": "D:\\University\\University\\AD\\Labs\\Teeko_ alpha-beta_pruning\\Teeko_ alpha-beta_pruning\\Teeko_ alpha-beta_pruning.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\koten\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.16\\microsoft.netcore.app.runtime.win-x64.3.1.16.nupkg.sha512",
+    "C:\\Users\\koten\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.16\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.16.nupkg.sha512",
+    "C:\\Users\\koten\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.16\\microsoft.aspnetcore.app.runtime.win-x64.3.1.16.nupkg.sha512"
+  ],
+  "logs": []
+}

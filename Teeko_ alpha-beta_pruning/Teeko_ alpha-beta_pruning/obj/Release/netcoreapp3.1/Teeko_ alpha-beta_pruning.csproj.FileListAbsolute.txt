@@ -1,0 +1,15 @@
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\bin\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.exe
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\bin\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.deps.json
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\bin\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.runtimeconfig.json
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\bin\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.runtimeconfig.dev.json
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\bin\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.dll
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\bin\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.pdb
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\obj\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.csproj.AssemblyReference.cache
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\obj\Release\netcoreapp3.1\Teeko__alpha_beta_pruning.Game.resources
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\obj\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.csproj.GenerateResource.cache
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\obj\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.AssemblyInfoInputs.cache
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\obj\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.AssemblyInfo.cs
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\obj\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.csproj.CoreCompileInputs.cache
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\obj\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.dll
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\obj\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.pdb
+D:\University\University\AD\Labs\Teeko_ alpha-beta_pruning\Teeko_ alpha-beta_pruning\obj\Release\netcoreapp3.1\Teeko_ alpha-beta_pruning.genruntimeconfig.cache
